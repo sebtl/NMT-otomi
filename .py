@@ -8,8 +8,7 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.layers import TextVectorization
 
-
-with open('spa_small.txt','r',encoding='UTF-8') as f:
+with open('spa_otomi.txt','r',encoding='UTF-8') as f:
     lines = f.read().split("\n")[:-1]
 text_pairs = []
 for line in lines:
