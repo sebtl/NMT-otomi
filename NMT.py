@@ -247,10 +247,17 @@ def decode_sequence(input_sentence):
     return decoded_sentence
 
 
-test_eng_texts = [pair[0] for pair in test_pairs]
-for _ in range(30):
-    input_sentence = random.choice(test_eng_texts)
-    translated = decode_sequence(input_sentence)
-    print('_____')
-    print(input_sentence)
-    print(translated)
+with open('unique.txt','r',encoding='UTF-8') as file:
+    file=file.read()
+
+file = file.split()
+print(len(file))
+file=set(list(file))
+print(len(file))
+
+
+with open('outfile_translation','w',encoding='UTF-8') as outfile:
+    for i in file:
+        input_sentence=i
+        translated=decode_sequence(input_sentence)
+        outfile.write(f'{input_sentence}\t{translated}\n')
