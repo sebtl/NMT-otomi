@@ -246,8 +246,8 @@ def decode_sequence(input_sentence):
             break
     return decoded_sentence
 
-
-with open('unique.txt','r',encoding='UTF-8') as file:
+# Créer la liste des mots à traduire
+with open('mots_uniques.txt','r',encoding='UTF-8') as file:
     file=file.read()
 
 file = file.split()
@@ -255,7 +255,7 @@ print(len(file))
 file=set(list(file))
 print(len(file))
 
-
+# Traduction des mots dans un fichier
 with open('outfile_translation','w',encoding='UTF-8') as outfile:
     for i in file:
         input_sentence=i
